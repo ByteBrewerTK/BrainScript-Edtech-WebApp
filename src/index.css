@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #070510;
+  font-family: 'Poppins', sans-serif;
+  color:#fff;
+}
+
+.App{
+  width: 70%;
+  min-height: 100vh;
+  /* border: 1px solid green; */
+  margin: 0 auto;
+}
+.NavBar{
+  width: 100%;
+  height: 75px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  >a{
+    >img{
+      /* width: 200px; */
+      height: 75px;
+    }
+  }
+  .nav-menu{
+    display: flex;
+    gap: 2rem;
+  }
+  .nav-element{
+      text-decoration: none;
+      font-size: 1.3rem;
+      color: white;
+      position: relative;
+  }
+  .nav-element:not(.nav-element.active):hover{
+    color: #FFD60A;
+  }
+
+      .nav-element.active::after{
+        content: "";
+        width: 100%;
+        height: 4px;
+        background: #FFD60A;
+        position: absolute;
+        bottom: -4px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: .5rem;
+        transition: all .3s;
+      }
+    
+  
+  .btn-authentication button{
+    background: rgb(73, 73, 73);
+    padding: .7rem .8rem;
+    margin-left: .6rem;
+    border-radius: .5rem;
+    outline: none;
+    border: transparent;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid rgb(147, 147, 147);
+    color: #fff;
+  }
+
+}
+.btn-authentication button:hover{
+  border-color: #FFD60A;
+}
+.btn-authentication a.active button:not(#logout){
+  /* background:#ffd60a; */
+  border: 1px solid #FFD60A;
+}
+#logout:hover{
+  border: 1px solid rgb(186, 15, 15);
+}
+
+.Template{
+  width: 100%;
+  height: calc(100vh - 77px);
+  display: flex;
+  align-items: center;
+  /* background: rgb(126, 150, 57); */
+    
+}
+.form-container{
+  width: 50%;
+
+}
+.login-container h2{
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #fff;
+}
+/* .login-page-slogan{
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  >p{
+
+    color: rgb(217, 217, 217);
+  }
+  > i{
+    color: rgb(96, 96, 248);
+  }
+} */
+.form-container{
+  >h2{
+    font-size: 2rem;
+    color: #d7e2ff;
+  }
+
+  .description{
+   margin-top: 1rem;
+   font-size: 1.2rem;
+
+   .slogan{
+    color: #c9c9c9;
+   }
+
+   .sloganItaly{
+    font-style: italic;
+    color: #4d4dd8;
+   }
+ }
+}
+
+.login-card{
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  background: #1b1b26;
+  padding: 2rem;
+  border-radius: 1rem;
+  color: white;
+  margin-top: 2rem;
+
+}
+
+  .login-card label {
+  font-size: 0.8rem;
+  margin-bottom: .3rem;
+  }
+
+  .email-label{
+    margin-top: 3rem;
+  }
+  .login-email {
+    display: flex;
+    align-items:center;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    padding-bottom: 0.7rem;
+    margin-bottom: 2rem;
+  }
+  .login-card .login-email input {
+    -webkit-user-select: none;
+      -moz-user-select: none;
+            user-select: none;
+    margin-left: 0.5rem;
+    background: transparent;
+    color: #fff;
+    font-size: 18px;
+  }
+  .login-card .login-email span{
+    font-size: 18px;
+  }
+  .login-card .password-card {
+    display: flex;
+    align-items: baseline;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    padding-bottom: 0.7rem;
+    margin-bottom: 2rem;
+
+  }
+  .login-card .password-card input {
+    -webkit-user-select: none;
+      -moz-user-select: none;
+            user-select: none;
+    margin-left: 0.5rem;
+    background: transparent;
+    color: #fff;
+  }
+  .login-card .password-card span, input{
+    font-size: 18px;
+  }
+
+  .login-card input::placeholder{
+    color: rgb(192, 192, 192);
+  }
+  .login-card input{
+    width: 100%;
+  }
+  .login-card #forgot-password {
+    color: rgb(149, 147, 147);
+    text-align: right;
+    font-size: 0.7rem;
+    position: relative;
+    transform: translateY(-1.2rem);
+    margin-top: .3rem;
+    cursor: pointer;
+
+  }
+  .password-visible{
+    cursor: pointer;
+    font-size: 18px;
+  }
+  .login-card #btn-submit {
+    width: 15rem;
+    padding: 0.8rem;
+    transform: translateX(1.3rem);
+    background-color: #FFD60A;
+    color: rgb(8, 8, 8);
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    border: transparent;
+    border-radius: 0.9rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    opacity: .9;
+    transition: 0.3s;
+  }
+  .login-card #btn-submit:hover {
+    opacity: 1;
+    box-shadow: 1px 1px 5px -1px black;
+  }
+  .login-card .login-using {
+    font-size: 0.7rem;
+    text-align: center;
+    transform: translateY(-0.5rem);
+  }
+  .login-card .social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+  .login-card .social .social-icon {
+    cursor: pointer;
+    transition: all 0.3s;
+    transform: translateY(-1rem);
+  }
+  .login-card .social .social-icon:hover {
+    color: #FFD60A;
+  }
+  
+  .input-type {
+    outline: none;
+    border: none;
+  }
+  .login-card input[type="password"]{
+    letter-spacing: .3rem;
+    font-size: 22px;
+
+    /* letter-spacing: .3rem; */
+  }
+  .login-card input[type="password"]::placeholder{
+    font-size: 18px;
+    letter-spacing: 0;
+  }
+  
+  
+  .login-illustrate{
+  width: 62%;
+  height: 100%;
+  /* border: 1px solid red; */
+}
+.bg-container.login-bg{
+  width: 50%;
+  height: 92%;
+  background: url(./assets/login-bg.png);
+  background-repeat: no-repeat;
+  background-position:bottom;
+  background-size:43cqmax;
+  /* border: 1px solid rgb(10, 108, 255); */
+}
+.bg-container.signup-bg{
+  width: 50%;
+  height: 92%;
+  background: url(./assets/undraw_dev_focus_re_6iwt.svg);
+  background-repeat: no-repeat;
+  background-position:center;
+  background-size:33cqmax;
+  /* border: 1px solid rgb(10, 108, 255); */
+}
+
+.Home{
+  width: 100%;
+  height: calc(100vh - 77px);
+  /* border: 1px solid red; */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  >h2{
+    font-size: 3rem
+  }
+}
+
+
+.accountType{
+  width: max-content;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-radius: 2rem;
+  padding: 5px;
+  border: 2px solid #d7e2ff36;
+  
+  background: #070510;
+  position: relative;
+  
+
+
+  >button{
+    padding: .5rem 1rem;
+    border-radius: 2rem;
+    outline: none;
+    border: none;
+    background: transparent;
+    color: #d7e2ff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 1;
+  }
+  >button.active{
+    background: #1b1b26;
+  }
+}
+/* .accountType::after{
+  content: "";
+  width: 50%;
+  height: calc(100% - 10px);
+  background: #1b1b26;
+  position: absolute;
+  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+
+  right:auto;
+  left: 5px;
+  border-radius: 2rem;
+*/
+
+.signup-card .field{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  height: 3rem;
+
+}
+/* .signup-card .name-field input{
+  height: 2.4rem;
+  width: 100%
+} */
+.signup-card .field input{
+  height: 2.4rem;
+  width: 100%;
+  background: none;
+  outline: none;
+  border: none;
+  
+}
+.signup-card .name-field input, #email{
+  border-bottom: 3px solid #fff;
+}
+/* .password{
+  display: flex;
+} */
+/* .password{
+  display: flex;
+
+  border-bottom:  2px solid #fff;
+
+  >input{
+    background: none;
+    border: none;
+    outline: none;
+  }
+} */
+.password label .password-visible{
+  position: absolute;
+
+}
+
+.signup-card{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  background: #1b1b26;
+  padding: 2rem;
+  border-radius: 1rem;
+  color: white;
+  margin-top: 2rem;
+  gap: 2rem;
+
+}
+
+.signup-card button.submit{
+  height: 2rem;
+}
+
+.signup-card .password div{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 3px solid #fff;
+  /* margin-right: 1rem; */
+}
+.password-field{
+  display: flex;
+  gap: 1rem;
+}
+.signup-card label{
+  font-size: .7rem;
+
+  >sup{
+    font-size: .8rem;
+    color: red;
+  }
+}
+
+.signup-card .social{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  >span{
+    font-size: 2rem;
+    cursor: pointer;
+
+    &:hover{
+      color: #FFD60A;
+    }
+  }
+}
+
+.signup-card .signin-using{
+  font-size: .7rem;
+  text-align: center;
+}
+
+.signup-card .submit{
+  height: 4rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: #FFD60A;
+  border-radius: .5rem;
+  width: 50%;
+  margin: 0 auto;
+  border: none;
+  cursor: pointer;
+  /* padding:.7rem 0; */
+}
+.signup-card input{
+  color: white;
+}
+
+.About, .Contact,.Dashboard{
+  width: 100%;
+  height: calc(100vh - 77px);
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+}
+  
